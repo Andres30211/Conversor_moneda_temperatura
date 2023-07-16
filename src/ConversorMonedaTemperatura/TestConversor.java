@@ -143,7 +143,8 @@ public class TestConversor {
 					
 				}
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null,e.getMessage()+" \nDébes de ingresár valóres numéricos");
+				break;
+				
 			}
 		}
 		
@@ -245,7 +246,7 @@ public class TestConversor {
 					
 				}
 			} catch (Exception e) {
-				JOptionPane.showMessageDialog(null,e.getMessage()+" \nDébes de ingresár valóres numéricos");
+				break;
 			}
 		
 		}
