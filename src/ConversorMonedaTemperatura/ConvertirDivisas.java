@@ -1,7 +1,20 @@
 package ConversorMonedaTemperatura;
 
+/**
+ * De esta clase se despliegan todas las funciones de conversión para las divisas
+ * @author Andrés Felipe López
+ *
+ */
 public class ConvertirDivisas {
 	
+	/**
+	 * En este caso para la conversión de divisas no se esta usando ninguna API
+	 * estamos declarando variables para establecer la tasa de conversión de cada
+	 * divisa que vamos a usar en este proyecto.
+	 * 
+	 * Despúes de que declaramos las variables declaramos los metodos con los que podemos hacer la conversión
+	 * de divisas
+	 */
 	private double PesosDolar = 0.00024;
 	private double PesosEuros = 0.00022;
 	private double PesosLibraEsterlina = 0.00019;

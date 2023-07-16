@@ -1,10 +1,21 @@
 package ConversorMonedaTemperatura;
 
+/**
+ * De esta clase se despliegan todas las funciones de conversión para las temperaturas
+ * @author Andrés Felipe López
+ *
+ */
 public class ConvertirTemperature {
 	
 	public ConvertirTemperature() {
 	}
 	
+	/**
+	 * En este caso para la conversión de temperatura no se esta usando ninguna API
+	 * dentro de la misma función estamos definiendo la tasa de conversión para las temperaturas
+	 * que vamos a usar en este proyecto.
+	 * 
+	 */
 	 public String celsiusFahrenheit(double celsius) {
 	        return celsius+" grados celsius son: "+(celsius * 9 / 5) + 32+" grados fahrenheit";
     }

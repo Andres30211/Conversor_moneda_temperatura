@@ -1,11 +1,27 @@
 package ConversorMonedaTemperatura;
 
+/**
+ * Importamos esta libreria para mostrar mensajes de confirmación durante el flujo de ejecución.
+ */
 import javax.swing.JOptionPane;
 
+/**
+ * Esta es la clase que contiene el método principal
+ * @author Andrés Felipe López
+ *
+ */
 public class TestConversor {
 
+	/**
+	 * Declaramos el metodo principal
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		
+		/**
+		 * Empezamos instanciando la clase menú principal para mostra las opciones de moneda
+		 * o temperatura
+		 */
 		MenuPrincipal menu = new MenuPrincipal();
 		String eleccionMenu = menu.MostrarMenu();
 		
@@ -17,17 +33,49 @@ public class TestConversor {
 		
 	}
 	
+	/**
+	 * Este es el método para usar el conversor de moneda, si arriba en el método
+	 * principal escogemos el conversor de moneda en el condicional if se llamara este
+	 * método 
+	 */
 	public static void ConversorDeMoneda() {
 		
+		/**
+		 * Acá instanciamos la clase menú principal para mostrar las opciones
+		 * de funciones que tenemos
+		 */
 		MenuPrincipal menu = new MenuPrincipal();
 		
+		/**
+		 * Este String lo estamos declarando para recorrerlo en el bucle while y validar
+		 * si estamos ingresando caracteres especiales
+		 */
 		String regex = "[a-z!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~]";
 		
+		/**
+		 * Estamos encerrando la logica de esta función en un bucle while para que séa
+		 * repetitiva las acciones segun la elección del usuario
+		 */
 		while(true) {
+			/**
+			 * En esta variable estamos tomando el valor que ingresamos en una de las funciones de
+			 * la clase menú principal
+			 */
 			String valorIngresado = menu.EntradaValor();
+			/**
+			 * Usamos el try catch para capturar cualquier tipo de error que se nos pueda
+			 * presentar
+			 */
 			try {
+				/**
+				 * En este if estamos validando el ingreso de caracteres especiales
+				 */
 				if(valorIngresado.isEmpty() || valorIngresado.matches(".*"+regex+".*")) {
 					JOptionPane.showMessageDialog(null, "Débes de ingresár valóres numéricos");
+				/**
+				 * En caso de que no se esten ingresando caracteres especiales ni letras
+				 * se ejecutan las funciones que se escojan en el menú
+				 */
 				}else {
 					String eleccionMoneda = menu.OpcionesMoneda();
 					ConvertirDivisas convertir = new ConvertirDivisas();
@@ -70,9 +118,19 @@ public class TestConversor {
 							break;
 					}
 					
+					/**
+					 * Segun la función seleccionada se mostrara el mensaje con el resultado
+					 */
 					JOptionPane.showMessageDialog(null, resultado);
+					/**
+					 * Con esta variable confirmar podemos finalizar el programa o
+					 * seguir haciendo conversiones
+					 */
 					int confirmar = confirmaciones.DeseaContinuar();
 					
+					/**
+					 * Esta es la validación de la varible confirmar
+					 */
 					if(confirmar == JOptionPane.YES_OPTION) {
 						
 					}else if(confirmar == JOptionPane.NO_OPTION) {
@@ -91,17 +149,49 @@ public class TestConversor {
 		
 	}
 	
+	/**
+	 * Este es el método para usar el conversor de temperatura, si arriba en el método
+	 * principal escogemos el conversor de temperatura en el condicional if se llamara este
+	 * método 
+	 */
 	public static void ConversorDeTemperatura() {
 		
+		/**
+		 * Acá instanciamos la clase menú principal para mostrar las opciones
+		 * de funciones que tenemos
+		 */
 		MenuPrincipal menu = new MenuPrincipal();
 		
+		/**
+		 * Este String lo estamos declarando para recorrerlo en el bucle while y validar
+		 * si estamos ingresando caracteres especiales
+		 */
 		String regex = "[a-z!\\\"#$%&'()*+,-./:;<=>?@[\\\\]^_`{|}~]";
 		
+		/**
+		 * Estamos encerrando la logica de esta función en un bucle while para que séa
+		 * repetitiva las acciones segun la elección del usuario
+		 */
 		while(true) {
+			/**
+			 * En esta variable estamos tomando el valor que ingresamos en una de las funciones de
+			 * la clase menú principal
+			 */
 			String valorIngresado = menu.EntradaTemperatura();
+			/**
+			 * Usamos el try catch para capturar cualquier tipo de error que se nos pueda
+			 * presentar
+			 */
 			try {
+				/**
+				 * En este if estamos validando el ingreso de caracteres especiales
+				 */
 				if(valorIngresado.isEmpty() || valorIngresado.matches(".*"+regex+".*")) {
 					JOptionPane.showMessageDialog(null, "Débes de ingresár valóres numéricos");
+					/**
+					 * En caso de que no se esten ingresando caracteres especiales ni letras
+					 * se ejecutan las funciones que se escojan en el menú
+					 */
 				}else {
 					String eleccionTemperatura = menu.OpcionesTemperatura();
 					ConvertirTemperature convertir = new ConvertirTemperature();
@@ -131,10 +221,18 @@ public class TestConversor {
 						default:
 							break;
 					}
-					
+					/**
+					 * Segun la función seleccionada se mostrara el mensaje con el resultado
+					 */
 					JOptionPane.showMessageDialog(null, resultado);
+					/**
+					 * Con esta variable confirmar podemos finalizar el programa o
+					 * seguir haciendo conversiones
+					 */
 					int confirmar = confirmaciones.DeseaContinuar();
-					
+					/**
+					 * Esta es la validación de la varible confirmar
+					 */
 					if(confirmar == JOptionPane.YES_OPTION) {
 						
 					}else if(confirmar == JOptionPane.NO_OPTION) {
